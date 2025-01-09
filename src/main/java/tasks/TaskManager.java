@@ -1,4 +1,4 @@
-package src.java.tasks;
+package src.main.java.tasks;
 
 import java.io.DataInputStream;
 
@@ -6,8 +6,8 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import src.java.saves.ILoadable;
-import src.java.saves.ISavable;
+import src.main.java.saves.ILoadable;
+import src.main.java.saves.ISavable;
 
 public class TaskManager implements ISavable, ILoadable {
     private List<Task> tasks;
@@ -92,10 +92,6 @@ public class TaskManager implements ISavable, ILoadable {
     public void printTasks()
     {
         for (Task task : tasks) {
-            /*System.out.println("Task ID: " + task.getID());
-            System.out.println("Task Name: " + task.getName());
-            System.out.println("Task Description: " + task.getDescription());
-            System.out.println("|============================================|");*/
             System.out.print("ID: " + task.getID() + ", ");
             System.out.print("Name: " + task.getName() + ", ");
             System.out.print("Description: " + task.getDescription() + ", ");

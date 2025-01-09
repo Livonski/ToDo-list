@@ -1,4 +1,4 @@
-package src.java.saves;
+package src.main.java.saves;
 
 import java.io.FileOutputStream;
 import java.io.DataOutputStream;

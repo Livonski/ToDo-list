@@ -1,23 +1,28 @@
-package src.java;
+package src.main.java;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import src.java.saves.SaveManager;
-import src.java.tasks.TaskManager;
+import src.main.java.saves.SaveManager;
+import src.main.java.tasks.TaskManager;
+import javafx.scene.Parent;
 
 public class ToDoListApplication extends Application
 {
     @Override 
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) throws Exception{
         TaskManager taskManager = new TaskManager();
         SaveManager saveManager = new SaveManager();
+        InputReader inputReader = new InputReader(taskManager, saveManager);
         saveManager.addLoadable(taskManager);
         saveManager.addSavable(taskManager);
 
-        TextField taskNameInputField = new TextField("Input task name");
+        /*TextField taskNameInputField = new TextField("Input task name");
         TextField taskDescriptionInputField = new TextField("Input task description");
 
         Button addTaskButton = new Button("Add task");
@@ -38,8 +43,15 @@ public class ToDoListApplication extends Application
 
 
         VBox root = new VBox(10);
-        root.getChildren().addAll(taskNameInputField, taskDescriptionInputField, addTaskButton, saveTasksButton, loadTasksButton, taskIDRemovalField, removeTaskButton, clearTasksButton);
+        root.getChildren().addAll(taskNameInputField, taskDescriptionInputField, addTaskButton, saveTasksButton, loadTasksButton, taskIDRemovalField, removeTaskButton, clearTasksButton);*/
 
+        //System.out.println(getClass().getResource("H:/Jaba/Projects/00_TODO_List/src/main/resources/fxml/AppLayout_0.1.fxml"));
+        //System.out.println(getClass().getResource("../resources/fxml/AppLayout_0.1.fxml"));
+
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/fxml/AppLayout_0.1.fxml"));
+        loader.setController(inputReader);
+        Parent root = loader.load();
         Scene scene = new Scene(root, 300,300);
 
         primaryStage.setTitle("JavaFX example");

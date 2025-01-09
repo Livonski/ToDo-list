@@ -1,9 +1,9 @@
-package src.java.tasks;
+package src.main.java.tasks;
 
 import java.io.ByteArrayOutputStream;
 import java.util.List;
 
-import src.java.saves.ISavable;
+import src.main.java.saves.ISavable;
 
 public class Task implements ISavable{
     private Integer ID;

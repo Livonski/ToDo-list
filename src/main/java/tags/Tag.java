@@ -1,9 +1,9 @@
-package src.java.tags;
+package src.main.java.tags;
 
 import java.io.ByteArrayOutputStream;
 
 import javafx.scene.paint.Color;
-import src.java.saves.ISavable;
+import src.main.java.saves.ISavable;
 
 public class Tag implements ISavable {
     private String name;
