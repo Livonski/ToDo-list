@@ -61,7 +61,6 @@ public class SaveManager {
             if(declaredSize != fileSize)
                 throw new Exception("Failed to load file, declared file size(" + declaredSize + ") != to actual size(" + fileSize + ")");
             
-            //byte[] data = dis.readAllBytes();
             loadables.get(0).load(dis);
             fis.close();
             dis.close();

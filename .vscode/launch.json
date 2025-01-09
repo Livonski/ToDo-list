@@ -3,38 +3,19 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ToDoListApplication",
+      "request": "launch",
+      "vmArgs": "--module-path \"H:/Jaba/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.web",
+      "mainClass": "src.java.ToDoListApplication",
+      "projectName": "00_TODO_List_9a2df6b1"
+    },
+    {
+      "type": "java",
       "name": "Main",
       "request": "launch",
       "vmArgs": "--module-path \"H:/Jaba/openjfx-23.0.1_windows-x64_bin-sdk/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.web",
       "mainClass": "src.java.Main",
       "projectName": "00_TODO_List_9a2df6b1"
-    },
-    /*
-    {
-      "type": "java",
-      "name": "ToDoListApplication",
-      "request": "launch",
-      "mainClass": "ToDoListApplication",
-      "projectName": "00_TODO_List_9a2df6b1"
-    },
-    /*{
-      "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
-      "request": "launch",
-      "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "h:/Jaba/Projects/00_TODO_List",
-      "program": "h:/Jaba/Projects/00_TODO_List/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
-    }*/
+    }
   ]
 }

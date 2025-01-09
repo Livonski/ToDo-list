@@ -29,9 +29,16 @@ public class ToDoListApplication extends Application
         Button loadTasksButton = new Button("Load tasks");
         loadTasksButton.setOnAction(e -> saveManager.load());
 
+        TextField taskIDRemovalField = new TextField("Input task ID");
+        Button removeTaskButton = new Button("Remove task");
+        removeTaskButton.setOnAction(e -> taskManager.removeTask(Integer.parseInt(taskIDRemovalField.getText())));
+
+        Button clearTasksButton = new Button("Clear tasks");
+        clearTasksButton.setOnAction(e -> taskManager.clearTasks());
+
 
         VBox root = new VBox(10);
-        root.getChildren().addAll(taskNameInputField, taskDescriptionInputField, addTaskButton, saveTasksButton, loadTasksButton);
+        root.getChildren().addAll(taskNameInputField, taskDescriptionInputField, addTaskButton, saveTasksButton, loadTasksButton, taskIDRemovalField, removeTaskButton, clearTasksButton);
 
         Scene scene = new Scene(root, 300,300);
 
