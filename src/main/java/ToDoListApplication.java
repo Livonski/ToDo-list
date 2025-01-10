@@ -22,33 +22,6 @@ public class ToDoListApplication extends Application
         saveManager.addLoadable(taskManager);
         saveManager.addSavable(taskManager);
 
-        /*TextField taskNameInputField = new TextField("Input task name");
-        TextField taskDescriptionInputField = new TextField("Input task description");
-
-        Button addTaskButton = new Button("Add task");
-        addTaskButton.setOnAction(e -> taskManager.addTask(taskNameInputField.getText(), taskDescriptionInputField.getText()));
-
-        Button saveTasksButton = new Button("Save tasks");
-        saveTasksButton.setOnAction(e -> saveManager.save());
-
-        Button loadTasksButton = new Button("Load tasks");
-        loadTasksButton.setOnAction(e -> saveManager.load());
-
-        TextField taskIDRemovalField = new TextField("Input task ID");
-        Button removeTaskButton = new Button("Remove task");
-        removeTaskButton.setOnAction(e -> taskManager.removeTask(Integer.parseInt(taskIDRemovalField.getText())));
-
-        Button clearTasksButton = new Button("Clear tasks");
-        clearTasksButton.setOnAction(e -> taskManager.clearTasks());
-
-
-        VBox root = new VBox(10);
-        root.getChildren().addAll(taskNameInputField, taskDescriptionInputField, addTaskButton, saveTasksButton, loadTasksButton, taskIDRemovalField, removeTaskButton, clearTasksButton);*/
-
-        //System.out.println(getClass().getResource("H:/Jaba/Projects/00_TODO_List/src/main/resources/fxml/AppLayout_0.1.fxml"));
-        //System.out.println(getClass().getResource("../resources/fxml/AppLayout_0.1.fxml"));
-
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/fxml/AppLayout_0.1.fxml"));
         loader.setController(inputReader);
         Parent root = loader.load();

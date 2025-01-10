@@ -6,15 +6,17 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import src.main.java.saves.ILoadable;
 import src.main.java.saves.ISavable;
 
 public class TaskManager implements ISavable, ILoadable {
-    private List<Task> tasks;
+    private ObservableList<Task> tasks;
     private int maxID;
 
     public TaskManager(){
-        tasks = new ArrayList<Task>();
+        tasks = FXCollections.observableArrayList();
         maxID = 0;
     }
 
@@ -28,7 +30,7 @@ public class TaskManager implements ISavable, ILoadable {
     }
 
     public void load(DataInputStream data){
-        tasks = new ArrayList<Task>();
+        tasks.clear();
         maxID = Integer.MIN_VALUE;
         try(data){
             int numTasks = data.readByte();
@@ -76,6 +78,10 @@ public class TaskManager implements ISavable, ILoadable {
         tasks.removeIf(t -> t.getID() == ID);
     }
 
+    public ObservableList<Task> getTasks(){
+        return tasks;
+    }
+
     public Task getTask(int ID){
         for (Task task : tasks) {
             if (task.getID() == ID)
@@ -86,7 +92,7 @@ public class TaskManager implements ISavable, ILoadable {
     }
 
     public void clearTasks(){
-        tasks = new ArrayList<Task>();
+        tasks.clear();
     }
 
     public void printTasks()
